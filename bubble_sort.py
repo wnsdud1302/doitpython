@@ -48,10 +48,24 @@ def bubble_sort_imporve2(list, n):
         k = last
 
 def bubble_sort2(list):
-    odd = 0
-    even = 1
-    shift = 0
-    while odd or even <= len(list):
-        break
+    left = 0
+    right = len(list)-1
+    last = right
+    while left < right:
+        for j in range(right,left,-1):
+            if list[j-1] > list[j]:
+                list[j-1], list[j] = list[j], list[j-1]
+                last = j
+        left = last
+        for j in range(left, right):
+            if a[j] > a[j+1]:
+                list[j],list[j+1] = list[j+1],list[j]
+                last = j
+        right = last
+def bubble_sort3(list):
+
+
+
+
 bubble_sort2(a)
 print(a)

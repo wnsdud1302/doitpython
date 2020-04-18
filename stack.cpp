@@ -6,5 +6,8 @@ class stack{
     public:
     stack();
     stack(stack *s, int max);
+    private:
+    int max;
+    stack *s;
 
 };
