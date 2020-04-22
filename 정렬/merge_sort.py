@@ -1,3 +1,4 @@
+import random
 def merge_sort(list1, list2,list3):
     i = int()
     j = int()
