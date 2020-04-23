@@ -1,12 +1,12 @@
 import random
-def __merge_sort(list1, list2,list3):
+def merge(list1, list2,list3):
     while True:
-        if list1 == None:
-            while list2 != None:
+        if len(list1) == 0:
+            while len(list2) != 0:
                 list3.append(list2.pop(0))
             break
-        if list2 == None:
-            while list1 != None:
+        if len(list2) == 0:
+            while len(list1) != 0:
                 list3.append(list1.pop(0))
             break
         if list1[0] > list2[0]:
@@ -37,12 +37,13 @@ def merge_sort(exlist, sort_list):
         right_list.append(exlist[right])
         right_list.sort()
         right = right + 1
-    __merge_sort(left_list,right_list,sort_list)
+    merge(left_list,right_list,sort_list)
 
 
 
 
 a = list(random.randint(1,50) for i in range(0,10))
+b = list()
 print("리스트 a : ",a)
-merge_sort(a, a)
-print("정렬된 리스트 a : ", a)
+merge_sort(a, b)
+print("정렬된 리스트 a : ",b)
