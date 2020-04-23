@@ -3,22 +3,6 @@ class Node:
          self.data = data
          self.next = next
     
-    def updateData(self, data):
-        self.data = data
-    
-    def SetNext(self, node):
-        self.next = node
-    
-    def getData(self):
-        return self.data
-
-    def getNextnode(self):
-        return self.next
-
-    def setNode(self, data, next):
-        self.data = data
-        self.next = next
-
 class Linked_list:
     def __init__(self):
         self.head = None
