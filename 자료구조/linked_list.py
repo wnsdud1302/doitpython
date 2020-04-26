@@ -13,6 +13,7 @@ class Linked_list:
         ptr = self.head
         while ptr.next != None:
             if ptr.data == data:
+                self.crnt = ptr
                 return ptr
             ptr = ptr.next
         return None
@@ -50,7 +51,7 @@ class Linked_list:
             else:
                 pre = Node(None)
                 while start.next != None:
-                    pre = startg
+                    pre = start
                     start = start.next
                 pre.next = None
                 self.crnt = pre
@@ -70,13 +71,19 @@ class Linked_list:
 
 
     def Clear(self):
-        pass
+        while self.head != None:
+            self.RemoveFront()
+        self.crnt = None
+
 
     def PrintCurrentData(self):
-        pass
+        if self.crnt == None:
+            print("선택한 노드가 없습니다.")
+        else:
+            print(self.crnt.data)
 
     def PrintCurrentNext(self):
-        pass
+        print(self.crnt.next)
 
     def Print(self):
         start = self.head
@@ -99,6 +106,4 @@ mylist.InsertFront(2)
 mylist.InsertRear(5)
 mylist.InsertFront(6)
 mylist.InsertRear(3)
-mylist.RemoveCurrent()
 mylist.Print()
-            
