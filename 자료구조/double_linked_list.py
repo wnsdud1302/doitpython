@@ -6,17 +6,15 @@ class Node:
 
 class double_linked_list:
     def __init__(self):
-        tmpNode = Node(None)
-        self.head = tmpNode
-        tmpNode.prev = tmpNode.next = tmpNode
-
+        self.head = Node("head")
+        self.head.prev = self.head.next = self.head
     def insertFront(self, data):
-        new_node = Node(data, self.head.next, self.head)
-        self.head.next = self.head.next.prev = new_node
+        insert(data, self.head)
+
     
     def insertRear(self, data):
-        new_node = Node(data, self.head.prev, self.head)
-        self.head.prev = self.head.prev.next = new_node
+        insert(data,self.head.next.prev)
+
     
     def print(self):
         start = self.head.next
@@ -28,9 +26,17 @@ class double_linked_list:
             if start:
                 print("-->", end=" ")
         print()
+def insert(data, p):
+    new_node = Node(data, p.next, p)
+    p.next = p.next.prev = new_node
+
+    
+
 
 mylist = double_linked_list()
+mylist.insertRear(8)
+mylist.insertRear(5)
 mylist.insertFront(3)
 mylist.insertFront(4)
-mylist.insertRear(5)
+mylist.insertFront(7)
 mylist.print()
