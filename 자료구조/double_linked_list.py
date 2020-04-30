@@ -22,7 +22,16 @@ class double_linked_list:
 
     def removeRear(self):
         remove(self.head.next.prev)
-
+    
+    def search(self, data):
+        start = self.head.next
+        while Ture:
+            if start.data == data:
+                return 1
+            start = start.next
+            if start.data == None: break
+            continue
+            
     def print(self):
         start = self.head.next
         if start.next == None:
