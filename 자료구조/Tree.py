@@ -52,6 +52,13 @@ class Tree:
                 parent.left = start.left
             else:
                 parent.right = start.left
+        elif start.left == None and start.right != None:
+            if parent.data > data:
+                parent.left = start.right
+            else:
+                parent.right = start.left
+        elif start.left != None and start.right != None:
+            pass
 
 
     def search(self, data):
