@@ -80,3 +80,19 @@ class BinTree:
             else:
                 print(start.data)
                 start = start.right
+
+
+myTree = BinTree(9)
+myTree.add(5)
+myTree.add(10)
+myTree.add(1)
+myTree.add(11)
+myTree.add(7)
+myTree.add(12)
+myTree.add(6)
+myTree.add(8)
+myTree.add(2)
+myTree.add(4)
+myTree.add(3)
+myTree.remove(5)
+print("finish")
